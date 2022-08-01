@@ -7,12 +7,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    root_url = request.url_root
-    local_url = 'http://127.0.0.1:5000/'
-    if root_url == local_url:
-        return "<h1>Server is alive.</h1>"
-    else:
-        return "<h1>Server is not running.</h1>"    
+
+    return "<h1>Server is running.</h1>"    
     
 @app.route('/predict')
 def predict():
