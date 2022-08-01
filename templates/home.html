@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customer information form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+      html, body {
+      display: flex; 
+      justify-content: center;
+      height: 80%;
+      }
+      body, div, h1, form, input, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #666;
+      }
+      h1 {
+      padding: 10px 0;
+      font-size: 32px;
+      font-weight: 300;
+      text-align: center;
+      }
+      p {
+      font-size: 12px;
+      }
+      hr {
+      color: #a9a9a9;
+      opacity: 0.3;
+      }
+      .main-block {
+      max-width: 440px; 
+      min-height: 270px; 
+      padding-left: 10px;
+      margin: auto;
+      border-radius: 5px; 
+      border: solid 1px #ccc;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+      background: #ebebeb; 
+      /* word-spacing: 10px; */
+      }
+      form {
+      margin: 0 30px;
+      }
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      button {
+      width: 50%;
+      padding: 10px 0;
+      margin: 10px auto;
+      border-radius: 5px; 
+      border: none;
+      background: #1c87c9; 
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      }
+      button:hover {
+      background: #26a9e0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <h1>Customer Information</h1>
+      <form method="POST" action="/predict">
+        <hr>       
+          <label for="Attrition_Flag">Exisitng Customer</label>
+          <select name="Attrition_Flag" id="Attrition_Flag">
+            <option value=0 selected>Yes</option>
+            <option value=1 >No </option> </word>
+          </select>
+        </br>
+        <label for="Total_Revolving_Bal">Total_Revolving_Bal</label> 
+        <input type="text" id="Total_Revolving_Bal" name="Total_Revolving_Bal" required/>
+        </br>
+        <label for="Total_Ct_Chng_Q4_Q1">Total_Ct_Chng_Q4_Q1</label> 
+        <input type="text" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1" required/>
+        </br>
+        <label for="Months_Inactive_12_mon">Months_Inactive_12_mon</label>
+        <input type="text" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon" required/>
+        <div class="btn-block">  
+          <button type="submit" >Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
