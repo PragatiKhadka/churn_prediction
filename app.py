@@ -6,9 +6,12 @@ import pandas as pd
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def home():
+def home():        
+    return render_template('server.html')    
 
-    return "<h1>Server is running.</h1>"    
+@app.route('/', methods=['POST'])
+def redirect_predict():    
+    return predict()
     
 @app.route('/predict')
 def predict():
