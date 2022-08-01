@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, jsonify
 import os
 import pickle
 import pandas as pd
+import json
 
 app = Flask(__name__)
 
@@ -25,6 +26,23 @@ def predict_post():
         result = int(identify_cluster(values))
         if result:
             cluster_info['id'] = result
+
+            # open and reading from churn_rate json file
+            f = open ('./data/churn_rate_info.json', "r")
+            data = json.loads(f.read())
+            print(data[str(result)])    
+            cluster_info['churn %'] = data[str(result)]
+            # Closing file
+            f.close()
+
+             # open and reading from gender json file
+            f = open ('./data/gender_info.json', "r")
+            data = json.loads(f.read())
+            print(data[str(result)])    
+            cluster_info['female %'] = data[str(result)]
+            # Closing file
+            f.close()
+
             return render_template('result.html', result=cluster_info)
         else:
             return jsonify({
