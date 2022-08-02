@@ -55,7 +55,7 @@ def predict_post():
 
 def identify_cluster(values):
     # load the model from disk
-    model = pickle.load(open('./model/clustering_model.sav', 'rb'))
+    model = pickle.load(open('.\model\clustering_model.sav', 'rb'))
     # convert the dictionary into dataframe
     input_df = pd.DataFrame([values])
     # predict the cluster id
