@@ -15,11 +15,12 @@ In order to run the program, install the libraries in the `requirements.txt`.
 #### Example 
 1. Go to the [heroku](https://ml-churn-prediction.herokuapp.com/)
 
-![home](./images/home.png)
+![home](./images/home.PNG)
 
 2. Click the button to continue  
 3. Enter the customer information and click submit
 
-![cust_info](./images/cust_info.png)  
-4. The result will be dispplayed  
-![result](./images/output.png)
+![cust_info](./images/cust_info.PNG)  
+4. The result will be displayed. The first row of the table is the cluster id. Second row is the churn rate in that cluster. And the third row is the % of female population in that cluster.  
+
+![result](./images/output.PNG)
