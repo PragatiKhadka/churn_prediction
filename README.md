@@ -21,6 +21,16 @@ In order to run the program, install the libraries in the `requirements.txt`.
 3. Enter the customer information and click submit
 
 ![cust_info](./images/cust_info.PNG)  
-4. The result will be displayed. The first row of the table is the cluster id. Second row is the churn rate in that cluster. And the third row is the % of female population in that cluster.  
-
+4. The result will be displayed. The first row of the table is the `cluster id`. Second row is the `churn rate` in that cluster. And the third row is the `% of female population` in that cluster.  
 ![result](./images/output.PNG)
+
+### Program Flow
+1. Read the provided dataset
+2. Understand and analyse the data based on the features
+3. Select the algorithm (k-means)
+4. Select the features to use in the model
+5. Select the optimal value of k for the k-means
+6. Train the model and save it
+7. Calculate the `Silhoutte score` to check the performance of the model
+8. Calculate the churn rate and the female percentage on each cluster and save it into json
+9. 3D plot the clusters
