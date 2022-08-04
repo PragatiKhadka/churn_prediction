@@ -5,25 +5,58 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <style>
+      html, body {
+      display: flex; 
+      justify-content: center;
+      height: 80%;
+      }
+      body, div, h1, form, input, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #666;
+      }
+      .main-block {
+      max-width: 440px; 
+      min-height: 270px; 
+      padding-left: 10px;
+      margin: auto;
+      border-radius: 5px; 
+      border: solid 1px #ccc;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+      background: #ebebeb; 
+      }
       h1 {
       padding: 10px 0;
       font-size: 32px;
       font-weight: 300;
       text-align: center;
       }
+      table, th, td {
+      border: 1px solid;
+      text-align: center;
+      }
+
+      table {
+        
+        width: 50%;
+      }
     </style>
   </head>
   <body>
-  <h1>Customer Churn Cluster Information</h1>
-  <table border = 1 align="center">
-    {% for key, value in result.items() %}
-
-    <tr>
-       <th> {{ key }} </th>
-       <td> {{ value }} </td>
-    </tr>
-
-    {% endfor %}
- </table>
+    <div class="main-block">
+      <h1>Customer Churn Cluster Information</h1>
+          <table align="center">
+           {% for key, value in result.items() %}       
+           <tr>
+              <th> {{ key }} </th>
+              <td> {{ value }} </td>
+           </tr>
+           {% endfor %}
+          </table>
+    </div>
+  </body>   
 </body>
 </html>
